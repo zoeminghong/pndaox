@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+    <appender name="console" class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[CateringLog] %d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+    <appender class="org.apache.log4j.RollingFileAppender" name="file">
+        <param name="File" value="../logs/catering.log" />
+        <param name="Append" value="true" />
+        <param name="MaxFileSize" value="1024KB" />
+        <param name="MaxBackupIndex" value="5" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[CateringLog] %d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c - %m%n" />
+        </layout>
+    </appender>
+
+
+    <!--通过<logger></logger>的定义可以将各个包中的类日志输出到不同的日志文件中-->
+    <logger name="org.springframework">
+        <level value="ERROR" />
+    </logger>
+
+    <logger name="org.mybatis.spring">
+        <level value="ERROR" />
+    </logger>
+
+    <logger name="net.sf.ehcache">
+        <level value="ERROR" />
+    </logger>
+
+    <logger name="com.mchange.v2">
+        <level value="ERROR" />
+    </logger>
+
+    <logger name="java.sql">
+        <level value="debug" />
+    </logger>
+    <root>
+        <priority value="debug" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+    </root>
+
+</log4j:configuration>

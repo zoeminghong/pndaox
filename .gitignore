@@ -1,0 +1,14 @@
+.settings
+.project
+.idea
+*.iml
+*.log
+**/.settings
+**/.classpath
+**/.eclipse
+**/.project
+**/target
+**/bin
+MANIFEST.MF
+.DS_Store
+/.apt_generated/

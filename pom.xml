@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <groupId>com.trc</groupId>
+  <modelVersion>4.0.0</modelVersion>
+
+  <artifactId>pndao-parent</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <jdk.version>1.8</jdk.version>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  <name>pndao</name>
+  <description>
+    一个非常简单的MyBatis辅助工具，可以基于DAO的命名约定帮你生成并维护SQL语句.
+  </description>
+  <!-- <url>http://git.oschina.net/piaoniu/pndao</url>
+  <developers>
+    <developer>
+      <id>yihua</id>
+      <name>Yihua huang</name>
+      <email>yihua.huang@ipiaoniu.com</email>
+    </developer>
+    <developer>
+      <id>enzo</id>
+      <name>Enze Liu</name>
+      <email>enze.liu@ipiaoniu.com</email>
+    </developer>
+  </developers> -->
+<!--   <scm>
+    <connection>scm:git:git@git.oschina.net:piaoniu/pndao.git</connection>
+    <developerConnection>scm:git:git@git.oschina.net:piaoniu/pndao.git</developerConnection>
+    <url>git@git.oschina.net:piaoniu/pndao.git</url>
+    <tag>pndao-0.2.0</tag>
+  </scm> -->
+<!--   <licenses>
+    <license>
+      <name>Apache License</name>
+      <url>http://git.oschina.net/piaoniu/pndao/blob/master/LICENSE</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses> -->
+
+  <modules>
+    <module>pndao</module>
+    <module>pndao-example</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>19.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.dom4j</groupId>
+        <artifactId>dom4j</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+ <!--  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement> -->
+  <build>
+    <plugins>
+      <!--<plugin>-->
+        <!--<groupId>org.sonatype.plugins</groupId>-->
+        <!--<artifactId>nexus-staging-maven-plugin</artifactId>-->
+        <!--<version>1.6.2</version>-->
+        <!--<extensions>true</extensions>-->
+        <!--<configuration>-->
+          <!--<serverId>ossrh</serverId>-->
+          <!--<nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
+          <!--<autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.2.1</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <executions>
+          <execution>
+            <id>attach-javadocs</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.6</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
