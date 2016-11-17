@@ -4,7 +4,7 @@
   <groupId>com.trc</groupId>
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>pndao-parent</artifactId>
+  <artifactId>pndaox-parent</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
 
@@ -12,40 +12,35 @@
     <jdk.version>1.8</jdk.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-  <name>pndao</name>
+  <name>pndaox-parent</name>
   <description>
-    一个非常简单的MyBatis辅助工具，可以基于DAO的命名约定帮你生成并维护SQL语句.
+   基于piaoniu代码优化，是一个非常简单的MyBatis辅助工具，可以基于DAO的命名约定帮你生成并维护SQL语句.
   </description>
-  <!-- <url>http://git.oschina.net/piaoniu/pndao</url>
+  <url>https://github.com/zoeminghong/pndaox</url>
   <developers>
     <developer>
-      <id>yihua</id>
-      <name>Yihua huang</name>
-      <email>yihua.huang@ipiaoniu.com</email>
+      <id>Jason</id>
+      <name>迹_Jason</name>
+      <email>hzgjx@tairanchina.com</email>
     </developer>
-    <developer>
-      <id>enzo</id>
-      <name>Enze Liu</name>
-      <email>enze.liu@ipiaoniu.com</email>
-    </developer>
-  </developers> -->
-<!--   <scm>
-    <connection>scm:git:git@git.oschina.net:piaoniu/pndao.git</connection>
-    <developerConnection>scm:git:git@git.oschina.net:piaoniu/pndao.git</developerConnection>
-    <url>git@git.oschina.net:piaoniu/pndao.git</url>
-    <tag>pndao-0.2.0</tag>
-  </scm> -->
-<!--   <licenses>
+  </developers>
+   <scm>
+    <connection>scm:git:git@github.com:zoeminghong/pndaox.git</connection>
+    <developerConnection>scm:git:git@github.com:zoeminghong/pndaox.git</developerConnection>
+    <url>git@github.com:zoeminghong/pndaox.git</url>
+    <tag>pndaox-1.0-SNAPSHOT</tag>
+  </scm>
+   <licenses>
     <license>
       <name>Apache License</name>
-      <url>http://git.oschina.net/piaoniu/pndao/blob/master/LICENSE</url>
+      <url>https://github.com/zoeminghong/pndaox/blob/master/LICENSE</url>
       <distribution>repo</distribution>
     </license>
-  </licenses> -->
+  </licenses>
 
   <modules>
-    <module>pndao</module>
-    <module>pndao-example</module>
+    <module>pndaox</module>
+    <module>pndaox-example</module>
   </modules>
 
   <dependencyManagement>

@@ -29,13 +29,13 @@ public @interface DaoGen {
 
     String separator() default "And";
 
-    String tablePrefix() default "PN_";
+    String tablePrefix() default "";
 
     String primaryKey() default "id";
 
-    String createTime() default "addTime";
+    String createTime() default "createDate";
 
-    String updateTime() default "updateTime";
+    String updateTime() default "updateDate";
 
     String tableName() default "";
 
