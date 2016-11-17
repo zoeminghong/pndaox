@@ -19,5 +19,5 @@ public interface UserDao extends EntityDao<User> {
 
 	int updateForUserName(@Param("userName") String userName, @Param("id") int id);
 
-	List<User> getListByModel(User user);
+	List<User> getListOrderByUserNameWithAsc(User user);
 }

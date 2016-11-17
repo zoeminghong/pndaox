@@ -416,7 +416,7 @@ public class DaoGenHelper {
             if (!params.isEmpty()) select.append(" where ");
             int cur = 0;
             appendParams(params, select, len, cur);
-            String order = "ASC";
+            String order = "DESC";
             String orderKey = daoGen.primaryKey();
             // idWithAsc
             if (!orderClause.isEmpty()){
@@ -439,29 +439,40 @@ public class DaoGenHelper {
             if (params.isEmpty()) throw new Error("At least need one param");
         });
     }
-//    private Consumer<String> addListAll(DaoGen daoGen, String key, MapperMethod method, Element root) {
-//        return addList(daoGen,key,method,root,(params)-> {
-//            if (params.isEmpty())
-//                throw new Error("At least need one param");
-//        });
-//    }
+
     private Consumer<String> addList(DaoGen daoGen, String key, MapperMethod method, Element root) {
         return (prefix) -> {
             Element sql = root.addElement("select");
             sql.addComment(COMMENT);
             sql.addAttribute("id", key);
             sql.addAttribute("resultType", method.getReturnType().toString());
+            String left = key.replaceFirst(prefix, "");
+            String orderClause = "";
+            if (left.contains(daoGen.orderBy())){
+                int index = left.indexOf(daoGen.orderBy());
+                orderClause = left.substring(index+daoGen.orderBy().length(),left.length());
+            }
             StringBuilder select = new StringBuilder(50);
             List<String> fields = getFields(method.getFirstParamType());
-//            validator.accept(fields);
-            select.append("select ")
+            select.append("Select ")
                     .append("*")
-                    .append(" from ")
+                    .append(" From ")
                     .append(method.getDaoEnv().getTableName());
-            if (!fields.isEmpty()) select.append(" where 1=1");
+            if (!fields.isEmpty()) select.append(" Where 1=1");
             sql.addText(select.toString());
             appendParams(fields,sql);
-            sql.addText(" order by " + daoGen.primaryKey()+" "+ daoGen.sort());
+            String order = "Desc";
+            String orderKey = daoGen.primaryKey();
+            if (!orderClause.isEmpty()){
+                if (orderClause.contains(daoGen.orderByWith())){
+                    int index = orderClause.indexOf(daoGen.orderByWith());
+                    order = orderClause.substring(index+daoGen.orderByWith().length(),orderClause.length());
+                    orderKey = orderClause.substring(0,index);
+                }else {
+                    orderKey = orderClause;
+                }
+            }
+            sql.addText(" Order By " + orderKey+" "+ order);
         };
     }
 

@@ -41,7 +41,5 @@ public @interface DaoGen {
 
     String orderBy() default "OrderBy";
 
-    String sort() default "desc";
-
     String orderByWith() default "With";
 }
