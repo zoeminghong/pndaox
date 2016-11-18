@@ -66,7 +66,7 @@ public class UserDaoTest extends AbstractTest {
     @Test
     public void testQueryUser() throws Exception {
 		User user=new User();
-		user.setId(1);
+//		user.setId(1);
         List<User> userList = userDao.getListOrderByUserNameWithAsc(user);
         assertThat(userList).isNotNull();
     }

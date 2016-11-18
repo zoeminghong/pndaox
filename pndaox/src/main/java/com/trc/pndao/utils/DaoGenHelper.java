@@ -481,7 +481,7 @@ public class DaoGenHelper {
             String realParam = lowerFirst(param);
             StringBuilder ifText=new StringBuilder(50);
             Element ifTest = sql.addElement("if");
-            ifTest.addAttribute("test", realParam + " !=null");
+            ifTest.addAttribute("test", realParam + " !=null and " +realParam + ".toString().length()>0");
             ifText.append(" And ")
                     .append("`")
                     .append(realParam)

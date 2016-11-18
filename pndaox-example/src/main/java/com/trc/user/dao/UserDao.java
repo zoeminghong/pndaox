@@ -15,7 +15,7 @@ import java.util.List;
 @DaoGen
 public interface UserDao extends EntityDao<User> {
 
-	List<User> queryByUserNameAndId(@Param("userName") String userName,@Param("id")int id);
+	List<User> queryByUserNameAndId(@Param("userName") String userName, @Param("id") int id);
 
 	int updateForUserName(@Param("userName") String userName, @Param("id") int id);
 
