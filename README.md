@@ -23,6 +23,8 @@ pndaox
 
 存在任何Bug，请在Issues中添加
 
+如果觉得还可以请点亮**start**，让更多的人看到
+
 **微博：**[迹_Jason](http://weibo.com/jasongoo123)
 
 **微信：**zoeminghong (请备注)
