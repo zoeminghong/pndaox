@@ -21,9 +21,15 @@ pndaox
 
 如有任何意见和建议，可以以下方式与我联系
 
+存在任何Bug，请在Issues中添加
+
 **微博：**[迹_Jason](http://weibo.com/jasongoo123)
 
-**微信：**zoeminghong
+**微信：**zoeminghong (请备注)
+
+**微信公众号**：
+
+![http://7xp64w.com1.z0.glb.clouddn.com/qrcode_for_gh_3e33976a25c9_258.jpg](http://7xp64w.com1.z0.glb.clouddn.com/qrcode_for_gh_3e33976a25c9_258.jpg)
 
 ### 感谢
 
