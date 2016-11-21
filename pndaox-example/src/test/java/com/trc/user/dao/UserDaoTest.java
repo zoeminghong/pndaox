@@ -1,8 +1,8 @@
 package com.trc.user.dao;
 
-import com.trc.user.dao.UserDao;
-import com.trc.user.entity.User;
 import com.trc.test.AbstractTest;
+import com.trc.user.entity.User;
+import org.apache.ibatis.session.RowBounds;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,4 +71,10 @@ public class UserDaoTest extends AbstractTest {
         assertThat(userList).isNotNull();
     }
 
+    @Test
+    public void testQueryAll() throws Exception {
+        RowBounds rowBounds=new RowBounds(2,2);
+        List<User> user = userDao.queryAll(rowBounds);
+        assertThat(user).isNotNull();
+    }
 }

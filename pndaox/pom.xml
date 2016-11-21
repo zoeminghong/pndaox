@@ -6,7 +6,7 @@
 
     <groupId>com.trc</groupId>
     <artifactId>pndaox</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
@@ -96,6 +96,13 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <outputDirectory>${project.basedir}/../jar</outputDirectory>
+                </configuration>
             </plugin>
         </plugins>
     </build>
